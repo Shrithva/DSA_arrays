@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int maxsubarray(vector<int>& nums){
+    int sum;
+    int maxx = INT_MIN;
+    for(auto it : nums){
+        sum += it;
+        maxx = max(sum, maxx);
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return maxx;
+}
+
+int main(){
+    vector<int> nums;
+    int n =0;
+    int i=0;
+    cout << "enter number of elements " << endl;
+    cin >> n;
+    for(int x=0 ; x<n ; x++){
+        cin >> i;
+        nums.push_back(i);
+
+    }
+    int q= maxsubarray(nums);
+    cout << "the maximum subarray sum is =" << q;
+    return 0;
+    
+
+}

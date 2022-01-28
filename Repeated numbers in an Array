@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+void findDuplicates(int num[]){
+    int l = sizeof(num);
+    map<int, int> dupmap;
+    for(int i =0; i < l; i++ ){
+        dupmap[num[i]]++;
+    }
+    // the map is ready
+    for(auto it : dupmap){
+        if( it.second >1 ){
+            cout << " the number" << it.first << " is being repeated " << it.second<< endl;
+        }
+    }
+
+}
+
+int main(){
+    int arr[] = {1,2,3,4,4,4,5,6,7};
+    findDuplicates(arr);
+    return 0;
+}
